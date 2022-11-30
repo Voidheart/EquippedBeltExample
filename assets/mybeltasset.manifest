@@ -1,0 +1,65 @@
+ManifestFileVersion: 0
+CRC: 2413410146
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: efe577ab8dd28ace98411bcdb9bd4b12
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 576f3fe4308eec913d8ac0f1a876357f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: f49e551b9e4b61f4b92c0ca84280bdac, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 732a36ae8eed30f49b0b762b23e13d72, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 44a8c71ce57be6641a310cba210d15cd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a2947ffe5c379fa489ece7a907d47e76, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: assembly_valheim
+  ClassName: Attack
+- AssemblyName: assembly_valheim
+  ClassName: EffectList
+- AssemblyName: assembly_valheim
+  ClassName: HitData/DamageTypes
+- AssemblyName: assembly_valheim
+  ClassName: ItemDrop/ItemData
+- AssemblyName: assembly_valheim
+  ClassName: ItemDrop/ItemData/SharedData
+Assets:
+- Assets/Plagueheart/EquippedBeltExample/BeltHealthUpgrade.prefab
+Dependencies: []
