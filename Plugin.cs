@@ -26,7 +26,6 @@ public class EquippedBeltExamplePlugin : BaseUnityPlugin
     public void Awake()
     {
         Item beltHealthUpgrade = new("mybeltasset", "belthealthupgrade");
-        // beltHealthUpgrade.Snapshot();
 
         var prefab = beltHealthUpgrade.Prefab;
         if (prefab == null)
@@ -35,30 +34,36 @@ public class EquippedBeltExamplePlugin : BaseUnityPlugin
             return;
         }
 
-        SetupBelt_IncreaseHealthBy(prefab, 500f);
+        //Some useful values if anyone was interested
+        //StaffSkeleton requires 100 Eitr for 1 summon
+        //StaffFireball requires 35 Eitr for 1 attack
+        //StaffIceShards requires 5 Eitr for 1 attack
+        //StaffShield requires 60 Eitr for 1 attack
+        SetupBelt_ModifyStatsBy(prefab, 500f, 200f, 150f);
 
         var assembly = Assembly.GetExecutingAssembly();
         _harmony.PatchAll(assembly);
     }
 
     //Creates Scriptable Object for the Belt
-    //Had to use custom SE because SE_HealthUpgrade would reset, possibly ZDO related
-    public static void SetupBelt_IncreaseHealthBy(GameObject prefab, float health = 0.0f)
+    public static void SetupBelt_ModifyStatsBy(GameObject prefab, float health = 0.0f, float stamina = 0.0f,
+        float eitr = 0.0f)
     {
         var mItemData = prefab.GetComponent<ItemDrop>()?.m_itemData ?? throw new ArgumentNullException(nameof(prefab));
 
-        var healthUpgrade = ScriptableObject.CreateInstance<SE_ModifyHealth>();
-        if (healthUpgrade != null)
-        {
-            healthUpgrade.name = "SE_BeltHealthUpgrade";
-            healthUpgrade.m_name = "$item_belthealthupgrade";
-            healthUpgrade.m_icon = mItemData.GetIcon();
-            healthUpgrade.m_tooltip = "$item_belthealthupgrade_tooltip";
-            healthUpgrade.m_startMessage = "$item_belthealthupgrade_startmessage";
-            healthUpgrade.m_stopMessage = "$item_belthealthupgrade_stopmessage";
+        var healthUpgrade = ScriptableObject.CreateInstance<SE_ModifyStats>();
+        if (healthUpgrade == null) return;
 
-            healthUpgrade.Health = health;
-            mItemData.m_shared.m_equipStatusEffect = healthUpgrade;
-        }
+        healthUpgrade.name = "BeltModifyStats";
+        healthUpgrade.m_name = "$item_belthealthupgrade";
+        healthUpgrade.m_icon = mItemData.GetIcon();
+        healthUpgrade.m_tooltip = "$item_belthealthupgrade_tooltip";
+        healthUpgrade.m_startMessage = "$item_belthealthupgrade_startmessage";
+        healthUpgrade.m_stopMessage = "$item_belthealthupgrade_stopmessage";
+
+        healthUpgrade.Health = health;
+        healthUpgrade.Stamina = stamina;
+        healthUpgrade.Eitr = eitr;
+        mItemData.m_shared.m_equipStatusEffect = healthUpgrade;
     }
 }
