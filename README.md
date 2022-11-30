@@ -15,3 +15,10 @@ default profile is `DebugTest`
     </PropertyGroup>
 ```
 Build will ouput the assembly into the `BepInEx\Plugins` folder
+
+# Asset is not included
+
+`Plugin.cs` Line: 28 change it to reflect your asset file.
+```c#
+    Item beltHealthUpgrade = new("AssetFileNameGoesHere", "belthealthupgrade");
+```
