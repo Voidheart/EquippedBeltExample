@@ -1,0 +1,1 @@
+You will need to place your own asset for your belt here. Make sure to include it as a embeded resource in the properties
