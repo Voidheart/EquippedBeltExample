@@ -20,5 +20,5 @@ Build will ouput the assembly into the `BepInEx\Plugins` folder
 
 `Plugin.cs` Line: 28 change it to reflect your asset file.
 ```c#
-    Item beltHealthUpgrade = new("AssetFileNameGoesHere", "belthealthupgrade");
+    Item beltHealthUpgrade = new("AssetFileNameGoesHere", "MyBeltPrefabNameGoesHere");
 ```
