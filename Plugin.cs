@@ -25,7 +25,7 @@ public class EquippedBeltExamplePlugin : BaseUnityPlugin
 
     public void Awake()
     {
-        Item beltHealthUpgrade = new("mybeltasset", "belthealthupgrade");
+        Item beltHealthUpgrade = new("AssetFileNameGoesHere", "belthealthupgrade");
 
         var prefab = beltHealthUpgrade.Prefab;
         if (prefab == null)
