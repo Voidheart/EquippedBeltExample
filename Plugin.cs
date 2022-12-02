@@ -13,7 +13,7 @@ public class EquippedBeltExamplePlugin : BaseUnityPlugin
 {
     internal const string ModName = "EquippedBeltExample";
     internal const string ModVersion = "1.0.0";
-    internal const string Author = "azumatt";
+    internal const string Author = "Plagueheart";
     private const string ModGUID = Author + "." + ModName;
 
     internal static string ConnectionError = "";
